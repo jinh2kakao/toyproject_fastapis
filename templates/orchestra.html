@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 노블 메이커 - Orchestra Workspace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="orchestra.css">
+</head>
+
+<body>
+
+    <div class="sidebar-layout">
+        <!-- v2.1 Dark Sidebar -->
+        <aside class="dark-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <i class="bi bi-stars"></i>
+                    <span>AI Novel Maker</span>
+                </a>
+                <!-- Desktop Collapse Toggle -->
+                <button id="sidebarToggle" class="sidebar-toggle-btn d-none d-lg-block">
+                    <i class="bi bi-list"></i>
+                </button>
+                <!-- Mobile Close Button (Optional, usually overlay click is enough but good for a11y) -->
+                <button class="btn-close btn-close-white d-lg-none ms-auto"
+                    onclick="document.body.classList.remove('sidebar-mobile-open')"></button>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="index.html" class="sidebar-link">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="orchestra.html" class="sidebar-link">
+                        <i class="bi bi-robot"></i>
+                        <span>Agent Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="templates.html" class="sidebar-link">
+                        <i class="bi bi-layers-fill"></i>
+                        <span>Templates</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="settings.html" class="sidebar-link">
+                        <i class="bi bi-gear-fill"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="mypage.html" class="sidebar-link mb-2">
+                    <i class="bi bi-person-circle"></i>
+                    <span>My Page</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="writing-interface h-100 d-flex">
+                <!-- 1. Chapter Sidebar (Left) -->
+                <aside class="chapter-sidebar d-flex flex-column border-end">
+                    <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                        <span class="fw-bold text-muted small">Nightingale and Alley</span>
+                        <button class="btn btn-sm btn-link text-muted p-0"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                    <div class="chapter-list flex-grow-1 overflow-auto p-2">
+                        <!-- Active Chapter -->
+                        <div
+                            class="chapter-item active p-2 rounded mb-1 d-flex justify-content-between align-items-center">
+                            <span class="text-truncate small fw-medium">Rain on Mott Street</span>
+                        </div>
+                        <!-- Other Chapters (Example) -->
+                        <div class="chapter-item p-2 rounded mb-1 d-flex justify-content-between align-items-center">
+                            <span class="text-truncate small text-muted">The Silver Scroll</span>
+                        </div>
+                    </div>
+                    <div class="p-3 border-top">
+                        <button class="btn btn-outline-secondary btn-sm w-100 text-start">
+                            <i class="bi bi-plus me-2"></i>New Chapter
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- 2. Editor Area (Center) -->
+                <section class="editor-area flex-grow-1 d-flex flex-column bg-white">
+                    <!-- Editor Toolbar -->
+                    <div class="editor-toolbar p-2 border-bottom d-flex align-items-center gap-2">
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-light text-muted"><i
+                                    class="bi bi-arrow-counterclockwise"></i></button>
+                            <button class="btn btn-sm btn-light text-muted"><i
+                                    class="bi bi-arrow-clockwise"></i></button>
+                        </div>
+                        <div class="vr mx-1"></div>
+                        <select class="form-select form-select-sm w-auto border-0 bg-light">
+                            <option>Text</option>
+                            <option>Heading 1</option>
+                            <option>Heading 2</option>
+                        </select>
+                        <div class="vr mx-1"></div>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-light text-muted"><i class="bi bi-type-bold"></i></button>
+                            <button class="btn btn-sm btn-light text-muted"><i class="bi bi-type-italic"></i></button>
+                            <button class="btn btn-sm btn-light text-muted"><i
+                                    class="bi bi-type-underline"></i></button>
+                            <button class="btn btn-sm btn-light text-muted"><i
+                                    class="bi bi-type-strikethrough"></i></button>
+                        </div>
+                        <div class="vr mx-1"></div>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-light text-muted"><i class="bi bi-text-left"></i></button>
+                            <button class="btn btn-sm btn-light text-muted"><i class="bi bi-text-center"></i></button>
+                            <button class="btn btn-sm btn-light text-muted"><i class="bi bi-text-right"></i></button>
+                        </div>
+                        <div class="ms-auto d-flex align-items-center gap-2">
+                            <span class="text-muted small"><i class="bi bi-check2-all me-1"></i>Modified</span>
+                        </div>
+                    </div>
+
+                    <!-- Editor Content -->
+                    <div class="editor-content-wrapper flex-grow-1 overflow-auto p-5">
+                        <div class="editor-paper mx-auto" style="max-width: 800px;">
+                            <h1 class="editor-title mb-4 fw-bold display-6" contenteditable="true">Rain on Mott Street
+                            </h1>
+                            <div class="editor-body" contenteditable="true">
+                                <p class="mb-3 text-muted fst-italic">
+                                    + :: Rain soaked the asphalt of Lower Manhattan until it shimmered. Lina Rossi
+                                    leaned against the emergency escape of a Brooklyn subway tunnel...
+                                </p>
+                                <p>
+                                    "Cough... Shit." She looked down at a deep crack in the scroll, a flicker of panic
+                                    in her amber eyes. The silver threads dangled loosely from the crack like pearls
+                                    from a broken string.
+                                </p>
+                                <p>
+                                    Lina straightened up, wiped the rain and sweat from her face, and pulled her hair
+                                    back into a high ponytail. "Cleared, Night Demon No. 73, but... my silver silk
+                                    scroll is broken. It couldn't withstand the last overload."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Editor Footer (Word Count) -->
+                    <div class="editor-footer p-2 border-top text-center">
+                        <span class="badge bg-light text-secondary rounded-pill fw-normal border">1834 words</span>
+                    </div>
+                </section>
+
+                <!-- 3. Tools Sidebar (Right) -->
+                <aside class="tools-sidebar border-start bg-body">
+                    <div class="tools-nav d-flex flex-column align-items-center py-3 border-bottom">
+                        <button class="btn btn-link text-muted mb-3 active-tool" data-bs-toggle="tooltip"
+                            title="Global Settings">
+                            <i class="bi bi-sliders fs-5"></i>
+                            <span class="d-block x-small mt-1">Settings</span>
+                        </button>
+                        <button class="btn btn-link text-muted mb-3" data-bs-toggle="tooltip"
+                            title="Chapter Generation">
+                            <i class="bi bi-lightning-charge fs-5"></i>
+                            <span class="d-block x-small mt-1">Generate</span>
+                        </button>
+                        <button class="btn btn-link text-muted mb-3" data-bs-toggle="tooltip" title="Polishing">
+                            <i class="bi bi-magic fs-5"></i>
+                            <span class="d-block x-small mt-1">Polish</span>
+                        </button>
+                        <button class="btn btn-link text-muted mb-3" data-bs-toggle="tooltip" title="Grammar Checker">
+                            <i class="bi bi-spellcheck fs-5"></i>
+                            <span class="d-block x-small mt-1">Grammar</span>
+                        </button>
+                    </div>
+
+                    <!-- Tool Panel Content (Example: Global Settings) -->
+                    <div class="tool-panel p-3 overflow-auto h-100">
+                        <h6 class="fw-bold mb-3">Global Settings</h6>
+                        <div class="alert alert-light border text-muted small mb-4">
+                            Introduction: By refining the novel settings, you can ensure consistency...
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-muted">Novel Title</label>
+                            <input type="text" class="form-control form-control-sm" value="Nightingale and Alley">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-muted">Novel Language</label>
+                            <select class="form-select form-select-sm">
+                                <option>English</option>
+                                <option>Korean</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-muted">Target Audience</label>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary-soft active">Unrestricted</button>
+                                <button class="btn btn-sm btn-light">Male</button>
+                                <button class="btn btn-sm btn-light">Female</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-muted">Story Genre</label>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-light text-dark border fw-normal">Boys' Love (BL)</span>
+                                <span class="badge bg-primary-soft text-primary border-0 fw-normal">Urban Life</span>
+                                <span class="badge bg-light text-dark border fw-normal">Romance</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="layout.js"></script>
+    <script src="orchestra.js"></script>
+</body>
+
+</html>

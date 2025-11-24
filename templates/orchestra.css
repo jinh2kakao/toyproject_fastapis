@@ -1,0 +1,173 @@
+/* orchestra.css - Styles for the Novel Writing Interface */
+
+/* 1. Main Layout Container */
+.writing-interface {
+    background-color: var(--bg-body);
+    overflow: hidden;
+    /* Prevent outer scroll */
+}
+
+/* 2. Chapter Sidebar (Left) */
+.chapter-sidebar {
+    width: 280px;
+    background-color: #F8FAFC;
+    /* Light grey background */
+    border-right: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.chapter-list {
+    overflow-y: auto;
+}
+
+.chapter-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.chapter-item:hover {
+    background-color: #F1F5F9;
+}
+
+.chapter-item.active {
+    background-color: #FFFFFF;
+    border-color: var(--border-color);
+    box-shadow: var(--shadow-sm);
+    color: var(--primary);
+}
+
+.chapter-item.active .text-muted {
+    color: var(--primary) !important;
+}
+
+/* 3. Editor Area (Center) */
+.editor-area {
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.editor-toolbar {
+    height: 50px;
+    background-color: #FFFFFF;
+    z-index: 10;
+}
+
+.editor-content-wrapper {
+    background-color: #FFFFFF;
+    /* Optional: subtle pattern or texture */
+}
+
+.editor-paper {
+    padding: 3rem 4rem;
+    min-height: 100%;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.editor-title {
+    color: var(--text-main);
+    outline: none;
+}
+
+.editor-body {
+    font-family: 'Merriweather', 'Georgia', serif;
+    /* Serif for writing */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155;
+    /* Slate 700 */
+    outline: none;
+}
+
+.editor-body p {
+    margin-bottom: 1.5rem;
+}
+
+/* 4. Tools Sidebar (Right) */
+.tools-sidebar {
+    width: 320px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    /* Nav + Panel */
+    flex-shrink: 0;
+}
+
+.tools-nav {
+    width: 60px;
+    background-color: #F8FAFC;
+    border-right: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.tools-nav .btn-link {
+    color: #94A3B8;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.2s;
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+.tools-nav .btn-link:hover {
+    color: var(--primary);
+    background-color: #F1F5F9;
+    opacity: 1;
+}
+
+.tools-nav .btn-link.active-tool {
+    color: var(--primary);
+    background-color: #FFFFFF;
+    opacity: 1;
+    box-shadow: inset 3px 0 0 var(--primary);
+    /* Left accent border */
+}
+
+.tool-panel {
+    flex-grow: 1;
+    background-color: #FFFFFF;
+}
+
+/* Utility */
+.x-small {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary-soft {
+    background-color: #EEF2FF;
+    color: var(--primary);
+    border: 1px solid transparent;
+}
+
+.btn-primary-soft:hover,
+.btn-primary-soft.active {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .tools-sidebar {
+        width: 280px;
+    }
+
+    .editor-paper {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .chapter-sidebar {
+        display: none !important;
+        /* Hide on smaller screens for now, or use offcanvas */
+    }
+
+    .tools-sidebar {
+        display: none !important;
+    }
+}

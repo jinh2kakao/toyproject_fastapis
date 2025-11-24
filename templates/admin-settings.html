@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - AI Novel Maker Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar-layout">
+        <!-- v2.1 Dark Sidebar for Admin -->
+        <aside class="dark-sidebar">
+            <div class="sidebar-header">
+                <a href="admin.html" class="sidebar-brand">
+                    <i class="bi bi-shield-lock-fill me-2"></i>
+                    <span>Admin Panel</span>
+                </a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="admin.html" class="sidebar-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-users.html" class="sidebar-link">
+                        <i class="bi bi-people-fill"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-templates.html" class="sidebar-link">
+                        <i class="bi bi-file-earmark-richtext-fill"></i>
+                        <span>Template Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-system.html" class="sidebar-link">
+                        <i class="bi bi-cpu-fill"></i>
+                        <span>System Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="admin-settings.html" class="sidebar-link">
+                        <i class="bi bi-sliders"></i>
+                        <span>Admin Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="sidebar-link">
+                    <i class="bi bi-arrow-left-circle"></i>
+                    <span>Back to App</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <h1 class="h3 mb-4">Admin Settings</h1>
+                
+                <div class="card">
+                    <div class="card-header">
+                        Global System Configurations
+                    </div>
+                    <div class="card-body">
+                        <p>This is a placeholder page for global system configurations.</p>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">OpenAI API Key</label>
+                                <input type="password" class="form-control" value="sk-....1234">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Max Tokens per Request</label>
+                                <input type="number" class="form-control" value="4096">
+                            </div>
+                            <button type="submit" class="btn btn-primary rounded-pill">Save Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="layout.js"></script>
+</body>
+</html>

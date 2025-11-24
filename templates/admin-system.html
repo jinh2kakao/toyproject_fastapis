@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Management - AI Novel Maker Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar-layout">
+        <!-- v2.1 Dark Sidebar for Admin -->
+        <aside class="dark-sidebar">
+            <div class="sidebar-header">
+                <a href="admin.html" class="sidebar-brand">
+                    <i class="bi bi-shield-lock-fill me-2"></i>
+                    <span>Admin Panel</span>
+                </a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="admin.html" class="sidebar-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-users.html" class="sidebar-link">
+                        <i class="bi bi-people-fill"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-templates.html" class="sidebar-link">
+                        <i class="bi bi-file-earmark-richtext-fill"></i>
+                        <span>Template Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="admin-system.html" class="sidebar-link">
+                        <i class="bi bi-cpu-fill"></i>
+                        <span>System Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-settings.html" class="sidebar-link">
+                        <i class="bi bi-sliders"></i>
+                        <span>Admin Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="sidebar-link">
+                    <i class="bi bi-arrow-left-circle"></i>
+                    <span>Back to App</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <h1 class="h3 mb-4">System Management & FinOps</h1>
+                
+                <!-- Job Inspector DataTable -->
+                <div class="card mb-4">
+                    <div class="card-header"><i class="bi bi-table me-1"></i> Real-time Job Logs</div>
+                    <div class="card-body">
+                        <table id="jobLogsTable">
+                            <thead>
+                                <tr>
+                                    <th>Job ID</th>
+                                    <th>Workflow</th>
+                                    <th>User</th>
+                                    <th>Status</th>
+                                    <th>Duration</th>
+                                    <th>Error Log</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>job_12a3bc</td>
+                                    <td>First Chapter Generator</td>
+                                    <td>jayden@example.com</td>
+                                    <td><span class="badge bg-success-soft text-success">Success</span></td>
+                                    <td>48.5s</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>job_12a3bd</td>
+                                    <td>Character Outline</td>
+                                    <td>alex@example.com</td>
+                                    <td><span class="badge bg-danger-soft text-danger">Failed</span></td>
+                                    <td>12.1s</td>
+                                    <td><a href="#">View Log</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Cost Analysis Table -->
+                <div class="card mb-4">
+                    <div class="card-header"><i class="bi bi-currency-dollar me-1"></i> Cost per Agent (Est.)</div>
+                    <div class="card-body">
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Agent Name</th>
+                                    <th>Avg Token Usage</th>
+                                    <th>Total Cost (Est.)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>세계관 설정</td><td>1,500</td><td>$250.75</td></tr>
+                                <tr><td>플롯 생성기</td><td>2,200</td><td>$410.20</td></tr>
+                                <tr><td>챕터 집필가</td><td>4,500</td><td>$980.50</td></tr>
+                                <tr><td>비평가</td><td>800</td><td>$120.00</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+    <script src="layout.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - AI Novel Maker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar-layout">
+        <!-- v2.1 Dark Sidebar for Admin -->
+        <aside class="dark-sidebar">
+            <div class="sidebar-header">
+                <a href="admin.html" class="sidebar-brand">
+                    <i class="bi bi-shield-lock-fill me-2"></i>
+                    <span>Admin Panel</span>
+                </a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item active">
+                    <a href="admin.html" class="sidebar-link">
+                        <i class="bi bi-speedometer2"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-users.html" class="sidebar-link">
+                        <i class="bi bi-people-fill"></i>
+                        <span>User Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-templates.html" class="sidebar-link">
+                        <i class="bi bi-file-earmark-richtext-fill"></i>
+                        <span>Template Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-system.html" class="sidebar-link">
+                        <i class="bi bi-cpu-fill"></i>
+                        <span>System Management</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="admin-settings.html" class="sidebar-link">
+                        <i class="bi bi-sliders"></i>
+                        <span>Admin Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="index.html" class="sidebar-link">
+                    <i class="bi bi-arrow-left-circle"></i>
+                    <span>Back to App</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <h1 class="h3 mb-4">Admin Dashboard</h1>
+                
+                <!-- Stats Cards -->
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="card-subtitle text-muted">MRR</h6>
+                                        <h4 class="card-title fw-bold">$12,450</h4>
+                                        <span class="small text-success"><i class="bi bi-arrow-up"></i> 12%</span>
+                                    </div>
+                                    <div class="fs-2 text-primary opacity-50"><i class="bi bi-currency-dollar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="card-subtitle text-muted">Active Users</h6>
+                                        <h4 class="card-title fw-bold">3,200</h4>
+                                        <span class="small text-success"><i class="bi bi-arrow-up"></i> 5.2%</span>
+                                    </div>
+                                    <div class="fs-2 text-primary opacity-50"><i class="bi bi-people-fill"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="card-subtitle text-muted">Token Cost (24h)</h6>
+                                        <h4 class="card-title fw-bold">$45.20</h4>
+                                        <span class="small text-danger"><i class="bi bi-arrow-down"></i> 2%</span>
+                                    </div>
+                                    <div class="fs-2 text-primary opacity-50"><i class="bi bi-cpu-fill"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                             <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h6 class="card-subtitle text-muted">Error Rate (24h)</h6>
+                                        <h4 class="card-title fw-bold">0.8%</h4>
+                                        <span class="small text-muted"><i class="bi bi-arrow-right"></i> Stable</span>
+                                    </div>
+                                    <div class="fs-2 text-primary opacity-50"><i class="bi bi-bug-fill"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header"><i class="bi bi-graph-up me-1"></i> Daily Token Usage</div>
+                            <div class="card-body"><canvas id="tokenUsageChart" width="100%" height="40"></canvas></div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header"><i class="bi bi-bar-chart-fill me-1"></i> New Signups</div>
+                            <div class="card-body"><canvas id="signupsChart" width="100%" height="40"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="layout.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
