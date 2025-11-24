@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Active Menu Item Highlighting ---
     // Automatically highlight the current page in the sidebar based on URL
-    const currentPath = window.location.pathname.split('/').pop();
+    const currentPath = window.location.pathname;
     const navItems = document.querySelectorAll('.sidebar-item');
 
     navItems.forEach(item => {
         const link = item.querySelector('a');
         if (link) {
             const href = link.getAttribute('href');
-            if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+            if (href === currentPath) {
                 item.classList.add('active');
             } else {
                 item.classList.remove('active');
