@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Novel Maker - Project Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Custom layout for this page to maximize space */
+        body {
+            overflow-x: hidden;
+        }
+        .sidebar-layout {
+            display: flex;
+        }
+        .dark-sidebar {
+            min-width: 15rem; /* Equivalent to sidebar width */
+            background-color: #212529; /* Dark background */
+            color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+        .sidebar-header {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #495057;
+            margin-bottom: 1rem;
+        }
+        .sidebar-brand {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-brand i {
+            margin-right: 0.5rem;
+        }
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            flex-grow: 1;
+        }
+        .sidebar-item .sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: #adb5bd;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .sidebar-item .sidebar-link:hover,
+        .sidebar-item .sidebar-link.active {
+            background-color: #343a40;
+            color: #f8f9fa;
+            border-radius: 0.25rem;
+        }
+        .sidebar-link i {
+            margin-right: 0.75rem;
+        }
+        .sidebar-footer {
+            padding-top: 1rem;
+            border-top: 1px solid #495057;
+            margin-top: 1rem;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+        }
+        .content-card {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar-layout">
+        <!-- Dark Sidebar - Restored from output-detail.html base -->
+        <aside class="dark-sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="sidebar-brand">
+                    <i class="bi bi-stars"></i>
+                    <span>AI Novel Maker</span>
+                </a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="/" class="sidebar-link">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <!-- Other sidebar items if needed -->
+            </ul>
+            <div class="sidebar-footer">
+                <a href="/mypage" class="sidebar-link mb-2">
+                    <i class="bi bi-person-circle"></i>
+                    <span>My Page</span>
+                </a>
+                <a href="#" class="sidebar-link">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container-fluid">
+                <header class="d-flex justify-content-between align-items-center mb-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="/"
+                                    class="text-decoration-none text-muted">Projects</a></li>
+                            <li class="breadcrumb-item active fw-semibold text-primary" aria-current="page">{{ project.title }}</li>
+                        </ol>
+                    </nav>
+                    <div>
+                        <a href="/" class="btn btn-secondary me-2">뒤로가기</a>
+                        <a href="/project/delete/{{ project.id }}" class="btn btn-danger"
+                            onclick="return confirm('정말 삭제하시겠습니까?');">삭제하기</a>
+                    </div>
+                </header>
+
+                <div class="content-card">
+                    <h2 class="mb-3">{{ project.title }}</h2>
+                    <p class="text-muted"><strong>장르:</strong> {{ project.genre }}</p>
+                    <p class="text-muted"><strong>로그라인:</strong> {{ project.logline }}</p>
+                    <p class="text-muted"><strong>최종 업데이트:</strong> {{ project.updated_at }}</p>
+                    <hr>
+                    <!-- Optionally display image if available -->
+                    {% if project.image_url %}
+                    <img src="{{ project.image_url }}" alt="Project Image" class="img-fluid rounded mb-3" style="max-height: 300px; object-fit: cover;">
+                    {% endif %}
+                    
+                    <h4 class="mt-4">Project Details</h4>
+                    <div class="card p-3 bg-light">
+                        <!-- Here you can add more detailed project content or AI-generated output -->
+                        <p>This is where more detailed content or AI-generated novel parts related to '{{ project.title }}' would go.</p>
+                        <p>For example, chapter summaries, character sheets, world-building notes, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
